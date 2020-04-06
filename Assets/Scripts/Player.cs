@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerRGB = GetComponent<Rigidbody2D>();
-
     }
 
     void Update()
@@ -86,5 +85,22 @@ public class Player : MonoBehaviour
         isJumping = false;
         isFalling = true;
         playerRGB.gravityScale = fallingGravity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Floor") {
+            isGrounded = true;
+            isJumping = false;
+            isFalling = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Floor")
+        {
+            isGrounded = false;
+        }
     }
 }
