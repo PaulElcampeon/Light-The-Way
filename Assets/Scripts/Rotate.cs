@@ -18,7 +18,6 @@ public class Rotate : MonoBehaviour
         AssignTargetAngle();
     }
 
-    // Update is called once per frame
     void Update()
     {
         RotateToTargetAngle();
