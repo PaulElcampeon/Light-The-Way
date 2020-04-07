@@ -17,9 +17,17 @@ public class Player : MonoBehaviour
     private float fallingGravity = 5f;
 
     [Header("Components")]
-    public Rigidbody2D playerRGB;
+    [SerializeField]
+    private GameObject lightReference;
+
+    [Header("Attributes")]
+    [SerializeField]
+    private int layTimes = 10;
+
+    private Rigidbody2D playerRGB;
 
     private float movementDir;
+    private float lastMovementInput;
     private bool isJumping;
     public bool isFalling;
     public bool isDead;
@@ -38,6 +46,8 @@ public class Player : MonoBehaviour
         movementDir = Input.GetAxisRaw("Horizontal");
 
         ListenForJumpInput();
+
+        ListenForThrowLightInput();
     }
 
     private void FixedUpdate()
@@ -47,6 +57,8 @@ public class Player : MonoBehaviour
         Movement();
 
         Fall();
+
+        if (playerRGB.velocity.y < -17f) playerRGB.velocity = new Vector2(playerRGB.velocity.x, -17f);
     }
 
     private void Jump()
@@ -63,7 +75,27 @@ public class Player : MonoBehaviour
     {
         if (isDead) return;
 
+        if (movementDir != 0) lastMovementInput = movementDir;
+
         playerRGB.velocity = new Vector2(movementDir * movementSpeed, playerRGB.velocity.y);
+    }
+
+    private void ThrowLight()
+    {
+        Vector2 velocity = new Vector2(-5f, 5f);
+
+        if (lastMovementInput == 1) velocity = new Vector2(5f, 5f);
+
+        GameObject throwLight = Instantiate(lightReference, transform.position, Quaternion.Euler(0f, 0f, 0f));
+
+        throwLight.GetComponent<Rigidbody2D>().velocity = velocity;
+    }
+
+    private void ListenForThrowLightInput()
+    {
+        if (layTimes <= 0) return;
+
+        if (Input.GetKeyDown(KeyCode.E) && !isDead) ThrowLight(); ;
     }
 
     private void ListenForJumpInput()
