@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D playerRGB;
 
+    private Animator playerAnimator;
+
     private float movementDir;
     private float lastMovementInput;
     private bool isJumping;
@@ -33,10 +35,26 @@ public class Player : MonoBehaviour
     public bool isDead;
     private bool isGrounded;
 
+    public static Player instance;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+
+        if (instance == null)
+        {
+            instance = this;
+
+        } else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
         playerRGB = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -59,6 +77,12 @@ public class Player : MonoBehaviour
         Fall();
 
         if (playerRGB.velocity.y < -17f) playerRGB.velocity = new Vector2(playerRGB.velocity.x, -17f);
+    }
+
+    public void Dead()
+    {
+        isDead = true;
+        playerAnimator.SetTrigger("Dead");
     }
 
     private void Jump()

@@ -12,6 +12,13 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 0.6f;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     void Update()
     {
         MoveTowardsTarget();
@@ -24,6 +31,15 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player") Time.timeScale = 0;
+        if (other.gameObject.tag == "Player") Player.instance.Dead();//Time.timeScale = 0;
+
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Refuge") Banish();
+    }
+
+    public void Banish()
+    {
+        animator.SetTrigger("Dead");
+        Destroy(gameObject, 1f);
     }
 }
