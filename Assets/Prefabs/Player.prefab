@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  jumpForce: 35
+  jumpForce: 36
   passiveGravity: 17
   fallingGravity: 5
   lightReference: {fileID: 6008393038698826520, guid: 5c6fce3792ea62b47a7edf977c1ae990,

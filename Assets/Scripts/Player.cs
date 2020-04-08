@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
 
         Fall();
 
-        if (playerRGB.velocity.y < -17f) playerRGB.velocity = new Vector2(playerRGB.velocity.x, -17f);
+        if (playerRGB.velocity.y < -16f) playerRGB.velocity = new Vector2(playerRGB.velocity.x, -16f);
     }
 
     public void Dead()
