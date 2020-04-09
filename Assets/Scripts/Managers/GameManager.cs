@@ -65,4 +65,10 @@ public class GameManager : MonoBehaviour
     {
         return instance;
     }
+
+    public void ExitGame()
+    {
+        Debug.Log("Quiting Game...");
+        Application.Quit();
+    }
 }
