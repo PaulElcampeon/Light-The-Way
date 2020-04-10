@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("UI")]
+    [SerializeField]
+    private GameObject gameOverScreen;
+    [SerializeField]
+    private GameObject gameWinScreen;
+    [SerializeField]
+    private GameObject menu;
+
     public static GameManager instance;
     public bool isGameOver;
+    public bool isLevelCompleted;
+    public bool isMenuOpen;
+
+    private int currentLevel;
 
     private void Awake()
     {
@@ -21,34 +33,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (isGameOver)
+        if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
+
+        if (isGameOver && !gameOverScreen.activeInHierarchy)
         {
-            Pause();
+            StartCoroutine(ShowGameOverScreen());
+        }
 
-            //ResetScene();
-
-            //UnPause();
-
-            //isGameOver = false;
+        if (isLevelCompleted && !gameWinScreen.activeInHierarchy)
+        {
+            StartCoroutine(ShowGameWinScreen());
         }
     }
 
-    private void ResetScene()
+    private IEnumerator ShowGameOverScreen()
     {
-       
+        yield return new WaitForSeconds(4);
+
+        TutorialMenu.instance.OpenMenuItem();
+        TutorialMenu.instance.ShowGameOverScreen();
+    }
+
+    private IEnumerator ShowGameWinScreen()
+    {
+        yield return new WaitForSeconds(4);
+
+        TutorialMenu.instance.OpenMenuItem();
+        TutorialMenu.instance.ShowGamWinScreen();
     }
 
     private void CheckIfPlayerHasFallen()
     {
-        if (Player.instance.transform.position.y <= -4.5) isGameOver = true;
+        if (Player.instance.transform.position.y > -4.5) return;
+
+        isGameOver = true;
     }
 
     public void Pause()

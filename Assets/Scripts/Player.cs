@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public bool isFalling;
     public bool isDead;
     private bool isGrounded;
+    private bool canMove = true;
 
     public static Player instance;
 
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isDead) return;
+        if (isDead || GameManager.instance.isMenuOpen || !canMove) return;
 
         movementDir = Input.GetAxisRaw("Horizontal");
 
@@ -82,7 +83,12 @@ public class Player : MonoBehaviour
     public void Dead()
     {
         isDead = true;
+
+        StopMovement();
+
         playerAnimator.SetTrigger("Dead");
+
+        GameManager.instance.isGameOver = true;
     }
 
     private void Jump()
@@ -97,11 +103,17 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        if (isDead) return;
+        if (isDead || !canMove) return;
 
         if (movementDir != 0) lastMovementInput = movementDir;
 
         playerRGB.velocity = new Vector2(movementDir * movementSpeed, playerRGB.velocity.y);
+    }
+
+    public void StopMovement()
+    {
+        canMove = false;
+        playerRGB.velocity = new Vector2(0f, 0f);
     }
 
     private void ThrowLight()

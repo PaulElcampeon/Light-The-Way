@@ -8,7 +8,6 @@ public class ExpandCollider : MonoBehaviour
     [SerializeField]
     private float radiusLimit = 20f;
 
-    private bool flipSwitch;
     private CircleCollider2D circleCollider2D;
 
     void Start()
@@ -18,16 +17,8 @@ public class ExpandCollider : MonoBehaviour
 
     void Update()
     {
-        if (!flipSwitch) return;
         if (circleCollider2D.radius > radiusLimit) return;
 
         circleCollider2D.radius += 10f * Time.deltaTime;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player") flipSwitch = true;
-
-        if (other.gameObject.tag == "Enemy") Debug.Log("Yipeee");
     }
 }

@@ -31,9 +31,8 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player") Player.instance.Dead();//Time.timeScale = 0;
+        if (other.gameObject.tag == "Player") Player.instance.Dead();
 
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Refuge") Banish();
     }
 
