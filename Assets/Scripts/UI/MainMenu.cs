@@ -24,7 +24,6 @@ public class MainMenu : MonoBehaviour
     public void LoadLevel(int level)
     {
         CustomSceneManager.instance.LoadScene(level.ToString());
-
     }
 
     public void ShowOptionsMenu()

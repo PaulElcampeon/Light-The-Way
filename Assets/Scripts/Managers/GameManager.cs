@@ -12,12 +12,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject menu;
 
-    public static GameManager instance;
     public bool isGameOver;
     public bool isLevelCompleted;
     public bool isMenuOpen;
 
     private int currentLevel;
+
+    public static GameManager instance;
 
     private void Awake()
     {
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ShowGameOverScreen()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3.5f);
 
         TutorialMenu.instance.OpenMenuItem();
         TutorialMenu.instance.ShowGameOverScreen();
@@ -69,6 +70,21 @@ public class GameManager : MonoBehaviour
         if (Player.instance.transform.position.y > -4.5) return;
 
         isGameOver = true;
+    }
+
+    public void BackToMainMenu()
+    {
+        CustomSceneManager.instance.LoadScene("Main Menu");
+    }
+
+    public void LoadNextLevel()
+    {
+        CustomSceneManager.instance.LoadScene((currentLevel++).ToString());
+    }
+
+    public void ResetLevel()
+    {
+        CustomSceneManager.instance.LoadScene((currentLevel).ToString());
     }
 
     public void Pause()
