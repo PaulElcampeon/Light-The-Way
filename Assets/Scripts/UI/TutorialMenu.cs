@@ -68,9 +68,9 @@ public class TutorialMenu : MonoBehaviour
 
     public void OpenMenuItem()
     {
-        GameManager.instance.Pause();
         GameManager.instance.isMenuOpen = true;
         isClueShowing = true;
+        GameManager.instance.Pause();
     }
 
     private void CloseActiveClue()

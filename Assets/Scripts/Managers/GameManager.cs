@@ -20,23 +20,18 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    private void Awake()
+    private void Start()
     {
-        DontDestroyOnLoad(this);
+        instance = this;
 
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Object.Destroy(gameObject);
-        }
+        if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
     }
 
     void Update()
     {
         if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
+
+        CheckIfPlayerHasFallen();
 
         if (isGameOver && !gameOverScreen.activeInHierarchy)
         {
@@ -51,15 +46,15 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ShowGameOverScreen()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(3f);
 
-        TutorialMenu.instance.OpenMenuItem();
         TutorialMenu.instance.ShowGameOverScreen();
+        TutorialMenu.instance.OpenMenuItem();
     }
 
     private IEnumerator ShowGameWinScreen()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(4f);
 
         TutorialMenu.instance.OpenMenuItem();
         TutorialMenu.instance.ShowGamWinScreen();
@@ -67,39 +62,38 @@ public class GameManager : MonoBehaviour
 
     private void CheckIfPlayerHasFallen()
     {
-        if (Player.instance.transform.position.y > -4.5) return;
+        if (Player.instance == null) return;
+        if (Player.instance.transform.position.y > -5) return;
 
         isGameOver = true;
     }
 
     public void BackToMainMenu()
     {
+        UnPause();
         CustomSceneManager.instance.LoadScene("Main Menu");
     }
 
     public void LoadNextLevel()
     {
+        UnPause();
         CustomSceneManager.instance.LoadScene((currentLevel++).ToString());
     }
 
     public void ResetLevel()
     {
-        CustomSceneManager.instance.LoadScene((currentLevel).ToString());
+        UnPause();
+        CustomSceneManager.instance.ResetScene();
     }
 
     public void Pause()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
 
     public void UnPause()
     {
-        Time.timeScale = 1;
-    }
-
-    public static GameManager getinstance()
-    {
-        return instance;
+        Time.timeScale = 1f;
     }
 
     public void ExitGame()

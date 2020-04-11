@@ -26,6 +26,13 @@ public class CustomSceneManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void ResetScene()
+    {
+        SceneManager.LoadScene("Tutorial");
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public CustomSceneManager getinstance()
     {
         return instance;

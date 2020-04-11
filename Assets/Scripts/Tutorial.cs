@@ -18,7 +18,7 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.isLevelCompleted) return;
+        if (GameManager.instance.isLevelCompleted || GameManager.instance.isGameOver) return;
 
         if (Vector2.Distance(Player.instance.transform.position, enemy.transform.position) <= 3.5f && !hasShowEnemyClue) ShowEnemyClue();
 

@@ -38,22 +38,9 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-
-        if (instance == null)
-        {
-            instance = this;
-
-        } else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Start()
     {
+        instance = this;
         playerRGB = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponentInChildren<Animator>();
     }
