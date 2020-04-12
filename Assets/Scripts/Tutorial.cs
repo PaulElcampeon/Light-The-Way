@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-
     [SerializeField]
     private GameObject enemy;
+
     private bool hasShownAimClue;
     private bool hasShownActionClue;
     private bool hasShowEnemyClue;
@@ -22,7 +22,7 @@ public class Tutorial : MonoBehaviour
 
         if (Vector2.Distance(Player.instance.transform.position, enemy.transform.position) <= 3.5f && !hasShowEnemyClue) ShowEnemyClue();
 
-        if (hasShownAimClue && !TutorialMenu.instance.isClueShowing && !hasShownActionClue) StartCoroutine(DisplayActionClueClue());
+        if (hasShownAimClue && !TutorialClues.instance.isClueShowing && !hasShownActionClue) StartCoroutine(DisplayActionClueClue());
 
     }
 
@@ -30,8 +30,8 @@ public class Tutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        TutorialMenu.instance.OpenMenuItem();
-        TutorialMenu.instance.ShowAimClue();
+        TutorialClues.instance.OpenMenuItem();
+        TutorialClues.instance.ShowAimClue();
         hasShownAimClue = true;
     }
 
@@ -41,14 +41,15 @@ public class Tutorial : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        TutorialMenu.instance.OpenMenuItem();
-        TutorialMenu.instance.ShowActionClue();
+        TutorialClues.instance.OpenMenuItem();
+        TutorialClues.instance.ShowActionClue();
     }
 
     public void ShowEnemyClue()
     {
         hasShowEnemyClue = true;
-        TutorialMenu.instance.OpenMenuItem();
-        TutorialMenu.instance.ShowEnemyClue();
+
+        TutorialClues.instance.OpenMenuItem();
+        TutorialClues.instance.ShowEnemyClue();
     }
 }

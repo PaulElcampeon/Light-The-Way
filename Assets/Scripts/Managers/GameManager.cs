@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     private GameObject gameOverScreen;
+
     [SerializeField]
     private GameObject gameWinScreen;
+
     [SerializeField]
     private GameObject menu;
 
@@ -48,16 +50,16 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        TutorialMenu.instance.ShowGameOverScreen();
-        TutorialMenu.instance.OpenMenuItem();
+        LevelUI.instance.OpenMenuItem();
+        LevelUI.instance.ShowGameOverScreen();
     }
 
     private IEnumerator ShowGameWinScreen()
     {
         yield return new WaitForSeconds(4f);
 
-        TutorialMenu.instance.OpenMenuItem();
-        TutorialMenu.instance.ShowGamWinScreen();
+        LevelUI.instance.OpenMenuItem();
+        LevelUI.instance.ShowGamWinScreen();
     }
 
     private void CheckIfPlayerHasFallen()
@@ -77,7 +79,7 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         UnPause();
-        CustomSceneManager.instance.LoadScene((currentLevel++).ToString());
+        CustomSceneManager.instance.LoadScene((currentLevel+1).ToString());
     }
 
     public void ResetLevel()

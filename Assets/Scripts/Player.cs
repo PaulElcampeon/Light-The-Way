@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int layTimes = 10;
 
+    [Header("Layer masks")]
+    [SerializeField]
+    private LayerMask groundLayerMask;
+
     private Rigidbody2D playerRGB;
 
     private Animator playerAnimator;
@@ -31,7 +35,6 @@ public class Player : MonoBehaviour
     private float movementDir;
     private float lastMovementInput;
     private bool isJumping;
-    public bool isFalling;
     public bool isDead;
     private bool isGrounded;
     private bool canMove = true;
@@ -54,6 +57,8 @@ public class Player : MonoBehaviour
         ListenForJumpInput();
 
         ListenForThrowLightInput();
+
+        CheckIfGrounded();
     }
 
     private void FixedUpdate()
@@ -130,7 +135,6 @@ public class Player : MonoBehaviour
     {
         playerRGB.gravityScale = passiveGravity;
         isGrounded = false;
-        isFalling = false;
         playerRGB.velocity = Vector2.up * jumpForce;
     }
 
@@ -138,24 +142,21 @@ public class Player : MonoBehaviour
     {
         isGrounded = false;
         isJumping = false;
-        isFalling = true;
         playerRGB.gravityScale = fallingGravity;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void CheckIfGrounded()
     {
-        if (other.gameObject.tag == "Floor") {
-            isGrounded = true;
-            isJumping = false;
-            isFalling = false;
-        }
-    }
+        RaycastHit2D hit;
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Floor")
+        float rayDistance = 0.05f;
+
+        hit = Physics2D.Raycast(transform.position - Vector3.up/2, Vector2.down, rayDistance, groundLayerMask);
+        Debug.DrawRay(transform.position - Vector3.up/2, Vector2.down * rayDistance, Color.red);
+
+        if (hit.collider != null)
         {
-            isGrounded = false;
-        }
+            isGrounded = true;
+        } 
     }
 }

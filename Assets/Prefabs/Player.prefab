@@ -123,7 +123,9 @@ MonoBehaviour:
   lightReference: {fileID: 6008393038698826520, guid: 5c6fce3792ea62b47a7edf977c1ae990,
     type: 3}
   layTimes: 10
-  isFalling: 0
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   isDead: 0
 --- !u!50 &9001209172742535347
 Rigidbody2D:

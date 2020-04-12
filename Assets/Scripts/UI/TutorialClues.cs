@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialMenu : MonoBehaviour
+public class TutorialClues : MonoBehaviour
 {
     [SerializeField]
     private GameObject aimClue;
@@ -13,18 +13,9 @@ public class TutorialMenu : MonoBehaviour
     [SerializeField]
     private GameObject actionClue;
 
-    [SerializeField]
-    private GameObject gameOverScreen;
-
-    [SerializeField]
-    private GameObject gameWinScreen;
-
-    [SerializeField]
-    private GameObject inGameMenu;
-
     public bool isClueShowing;
 
-    public static TutorialMenu instance;
+    public static TutorialClues instance;
 
     void Start()
     {
@@ -49,21 +40,6 @@ public class TutorialMenu : MonoBehaviour
     public void ShowActionClue()
     {
         actionClue.SetActive(true);
-    }
-
-    public void ShowGameOverScreen()
-    {
-        gameOverScreen.SetActive(true);
-    }
-
-    public void ShowGamWinScreen()
-    {
-        gameWinScreen.SetActive(true);
-    }
-
-    public void ShowInGameMenu()
-    {
-        inGameMenu.SetActive(true);
     }
 
     public void OpenMenuItem()
