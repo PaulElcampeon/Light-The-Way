@@ -34,9 +34,11 @@ public class Player : MonoBehaviour
 
     private float movementDir;
     private float lastMovementInput;
-    private bool isJumping;
+    public bool isJumping;
+    public bool isMoving;
     public bool isDead;
     private bool isGrounded;
+    private bool canJump = true;
     private bool canMove = true;
 
     public static Player instance;
@@ -50,7 +52,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isDead || GameManager.instance.isMenuOpen || !canMove) return;
+        if (isDead || GameManager.instance.isMenuOpen) return;
 
         movementDir = Input.GetAxisRaw("Horizontal");
 
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
         ListenForThrowLightInput();
 
         CheckIfGrounded();
+        Debug.Log(playerRGB.velocity.y);
     }
 
     private void FixedUpdate()
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
 
         Fall();
 
-        if (playerRGB.velocity.y < -16f) playerRGB.velocity = new Vector2(playerRGB.velocity.x, -16f);
+        if (playerRGB.velocity.y < -13f) playerRGB.velocity = new Vector2(playerRGB.velocity.x, -13f);
     }
 
     public void Dead()
@@ -85,7 +88,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (isJumping && isGrounded) ActivateJump();
+        if (isJumping && isGrounded && canJump) ActivateJump();
     }
 
     private void Fall()
@@ -95,9 +98,12 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        if (isDead || !canMove) return;
+        if (isDead) return;
 
         if (movementDir != 0) lastMovementInput = movementDir;
+        if (movementDir == 0) isMoving = false;
+        if (movementDir != 0) isMoving = true;
+        if (!canMove) movementDir = 0;
 
         playerRGB.velocity = new Vector2(movementDir * movementSpeed, playerRGB.velocity.y);
     }
@@ -106,6 +112,13 @@ public class Player : MonoBehaviour
     {
         canMove = false;
         playerRGB.velocity = new Vector2(0f, 0f);
+    }
+
+    public void MergeWithRefuge(Vector2 refugePosition)
+    {
+        canMove = false;
+        playerRGB.gravityScale = 0;
+        transform.position = Vector2.MoveTowards(transform.position, refugePosition, 2f * Time.deltaTime);
     }
 
     private void ThrowLight()
@@ -133,14 +146,15 @@ public class Player : MonoBehaviour
 
     private void ActivateJump()
     {
+        canJump = false;
         playerRGB.gravityScale = passiveGravity;
         isGrounded = false;
+        StartCoroutine(ResetJump());
         playerRGB.velocity = Vector2.up * jumpForce;
     }
 
     public void ActivateFall()
     {
-        isGrounded = false;
         isJumping = false;
         playerRGB.gravityScale = fallingGravity;
     }
@@ -148,15 +162,28 @@ public class Player : MonoBehaviour
     private void CheckIfGrounded()
     {
         RaycastHit2D hit;
+        RaycastHit2D hitLeft;
+        RaycastHit2D hitRight;
 
         float rayDistance = 0.05f;
 
         hit = Physics2D.Raycast(transform.position - Vector3.up/2, Vector2.down, rayDistance, groundLayerMask);
-        Debug.DrawRay(transform.position - Vector3.up/2, Vector2.down * rayDistance, Color.red);
+        hitLeft = Physics2D.Raycast(transform.position - Vector3.up/2 + Vector3.left/4, Vector2.down, rayDistance, groundLayerMask);
+        hitRight = Physics2D.Raycast(transform.position - Vector3.up/2 + Vector3.right/4, Vector2.down, rayDistance, groundLayerMask);
 
-        if (hit.collider != null)
+        Debug.DrawRay(transform.position - Vector3.up / 2, Vector2.down * rayDistance, Color.red);
+        Debug.DrawRay(transform.position - Vector3.up / 2 + Vector3.left / 4, Vector2.down * rayDistance, Color.red);
+        Debug.DrawRay(transform.position - Vector3.up / 2 + Vector3.right / 4, Vector2.down * rayDistance, Color.red);
+
+        if (hit.collider != null || hitLeft.collider != null || hitRight.collider != null)
         {
             isGrounded = true;
         } 
+    }
+
+    private IEnumerator ResetJump()
+    {
+        yield return new WaitForSeconds(0.4f);
+        canJump = true;
     }
 }

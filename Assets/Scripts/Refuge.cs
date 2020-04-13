@@ -16,11 +16,17 @@ public class Refuge : MonoBehaviour
         expandCollider = GetComponent<ExpandCollider>();
     }
 
+    private void ActivateBehaviours()
+    {
+        shine.enabled = true;
+        expandCollider.enabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<Player>().StopMovement();
+            //other.gameObject.GetComponent<Player>().StopMovement();
             ActivateBehaviours();
             GameManager.instance.isLevelCompleted = true;
         }
@@ -28,9 +34,10 @@ public class Refuge : MonoBehaviour
         if (other.gameObject.tag == "Enemy") Debug.Log("Yipeee");
     }
 
-    private void ActivateBehaviours()
+    private void OnTriggerStay2D(Collider2D other)
     {
-        shine.enabled = true;
-        expandCollider.enabled = true;
+        if (other.gameObject.tag == "Player") other.gameObject.GetComponent<Player>().MergeWithRefuge(transform.position);
+
     }
+
 }

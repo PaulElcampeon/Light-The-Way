@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     private void CheckIfPlayerHasFallen()
     {
         if (Player.instance == null) return;
-        if (Player.instance.transform.position.y > -5) return;
+        if (Player.instance.transform.position.y > -6) return;
 
         isGameOver = true;
     }

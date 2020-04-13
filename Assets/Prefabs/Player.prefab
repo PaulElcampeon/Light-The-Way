@@ -117,15 +117,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  jumpForce: 36
-  passiveGravity: 17
-  fallingGravity: 5
+  jumpForce: 20
+  passiveGravity: 9
+  fallingGravity: 3
   lightReference: {fileID: 6008393038698826520, guid: 5c6fce3792ea62b47a7edf977c1ae990,
     type: 3}
   layTimes: 10
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  isJumping: 0
   isDead: 0
 --- !u!50 &9001209172742535347
 Rigidbody2D:
@@ -140,7 +141,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.03
+  m_LinearDrag: 0.05
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
