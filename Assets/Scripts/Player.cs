@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
         ListenForThrowLightInput();
 
         CheckIfGrounded();
-        Debug.Log(playerRGB.velocity.y);
     }
 
     private void FixedUpdate()
@@ -77,6 +76,8 @@ public class Player : MonoBehaviour
 
     public void Dead()
     {
+        if (isDead) return;
+
         isDead = true;
 
         StopMovement();

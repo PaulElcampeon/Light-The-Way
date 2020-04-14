@@ -10,14 +10,20 @@ public class Translate : MonoBehaviour
     [SerializeField]
     private bool shouldMoveVeritcal;
 
+    [Header("Speed should be between 0.1 and 1f")]
+    [SerializeField]
+    private float speed = 1f;
+
     private Vector3 startingPosition;
     private Vector3 endPosition;
-    public Vector3 targetPosition;
+    private Vector3 targetPosition;
 
     private Rigidbody2D rgb;
 
     void Start()
     {
+
+        AdjustSpeedIfNeeded();
         rgb = GetComponent<Rigidbody2D>();
         startingPosition = transform.position;
 
@@ -43,7 +49,7 @@ public class Translate : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rgb.MovePosition(transform.position + targetPosition * Time.fixedDeltaTime);
+        rgb.MovePosition(transform.position + targetPosition * speed * Time.fixedDeltaTime);
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -52,5 +58,11 @@ public class Translate : MonoBehaviour
         {
             if (!other.gameObject.GetComponent<Player>().isJumping && !other.gameObject.GetComponent<Player>().isMoving) other.gameObject.GetComponent<Rigidbody2D>().MovePosition(other.gameObject.transform.position + targetPosition * Time.fixedDeltaTime);
         }
+    }
+
+    private void AdjustSpeedIfNeeded()
+    {
+        if (speed > 1f) speed = 1f;
+        if (speed <= 0f) speed = 0.1f;
     }
 }
