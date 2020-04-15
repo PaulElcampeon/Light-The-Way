@@ -46,6 +46,12 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   gameWinScreen: {fileID: 0}
   menu: {fileID: 0}
+  lightsHUD:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isGameOver: 0
   isLevelCompleted: 0
   isMenuOpen: 0

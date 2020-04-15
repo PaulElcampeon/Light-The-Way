@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject menu;
 
+    [SerializeField]
+    private GameObject[] lightsHUD;
+
     public bool isGameOver;
     public bool isLevelCompleted;
     public bool isMenuOpen;
@@ -68,6 +71,17 @@ public class GameManager : MonoBehaviour
         if (Player.instance.transform.position.y > -6) return;
 
         isGameOver = true;
+    }
+
+    public void UpdateLightsHud(int numberOfLightsLeft)
+    {
+        for (int i=0; i < lightsHUD.Length; i++)
+        {
+            if (i>= numberOfLightsLeft)
+            {
+                lightsHUD[i].SetActive(false);
+            }
+        }
     }
 
     public void BackToMainMenu()

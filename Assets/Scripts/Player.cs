@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField]
-    private int layTimes = 10;
+    private int layTimes = 5;
 
     [Header("Layer masks")]
     [SerializeField]
@@ -124,6 +124,8 @@ public class Player : MonoBehaviour
 
     private void ThrowLight()
     {
+        layTimes--;
+
         Vector2 velocity = new Vector2(-5f, 5f);
 
         if (lastMovementInput == 1) velocity = new Vector2(5f, 5f);
@@ -131,6 +133,8 @@ public class Player : MonoBehaviour
         GameObject throwLight = Instantiate(lightReference, transform.position, Quaternion.Euler(0f, 0f, 0f));
 
         throwLight.GetComponent<Rigidbody2D>().velocity = velocity;
+
+        GameManager.instance.UpdateLightsHud(layTimes);
     }
 
     private void ListenForThrowLightInput()
