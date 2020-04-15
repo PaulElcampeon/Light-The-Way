@@ -54,9 +54,11 @@ public class Translate : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
+        if (shouldMoveVeritcal) return;
+
         if (other.gameObject.tag == "Player")
         {
-            if (!other.gameObject.GetComponent<Player>().isJumping && !other.gameObject.GetComponent<Player>().isMoving) other.gameObject.GetComponent<Rigidbody2D>().MovePosition(other.gameObject.transform.position + targetPosition * Time.fixedDeltaTime);
+            if (!other.gameObject.GetComponent<Player>().isJumping && !other.gameObject.GetComponent<Player>().isMoving) other.gameObject.GetComponent<Rigidbody2D>().MovePosition(other.gameObject.transform.position + targetPosition * speed * Time.fixedDeltaTime);
         }
     }
 
