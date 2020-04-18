@@ -11,9 +11,15 @@ public class SoundUI : MonoBehaviour
     [SerializeField]
     private Slider sfxSlider;
 
+    private void Start()
+    {
+        bgmSlider.value = SoundManager.instance.bgmVolume;
+        sfxSlider.value = SoundManager.instance.sfxVolume;
+    }
+
     void Update()
     {
-        SoundManager.instance.SetBGMVolume(bgmSlider.value);
-        SoundManager.instance.SetSFXVolume(sfxSlider.value);
+        SoundManager.instance.bgmVolume = bgmSlider.value;
+        SoundManager.instance.sfxVolume = sfxSlider.value;
     }
 }

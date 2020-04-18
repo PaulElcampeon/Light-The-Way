@@ -31,6 +31,11 @@ public class CustomSceneManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public string CurrentScene()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
+
     public CustomSceneManager getinstance()
     {
         return instance;

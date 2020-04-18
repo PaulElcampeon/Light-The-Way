@@ -11,26 +11,46 @@ public class GameMenu : MonoBehaviour
     private GameObject controlsMenu;
     [SerializeField]
     private GameObject levelDifficultyMenu;
+    [SerializeField]
+    private GameObject backButton;
+
+    private void Start()
+    {
+        backButton.SetActive(true);
+    }
 
     public void ShowSoundMenu()
     {
         soundMenu.SetActive(true);
+        GameManager.instance.Pause();
     }
 
     public void ShowControlsMenu()
     {
         controlsMenu.SetActive(true);
+        GameManager.instance.Pause();
     }
 
     public void ShowLevelDifficultyMenu()
     {
         levelDifficultyMenu.SetActive(true);
+        GameManager.instance.Pause();
     }
 
     public void CloseMenu()
     {
-        if (soundMenu.activeInHierarchy) soundMenu.SetActive(false);
-        if (controlsMenu.activeInHierarchy) controlsMenu.SetActive(false);
-        if (levelDifficultyMenu.activeInHierarchy) levelDifficultyMenu.SetActive(false);
+        GameManager.instance.UnPause();
+
+        if (soundMenu.activeInHierarchy) { soundMenu.SetActive(false); return; }
+        if (controlsMenu.activeInHierarchy) { controlsMenu.SetActive(false); return; }
+        if (levelDifficultyMenu.activeInHierarchy) { levelDifficultyMenu.SetActive(false); return; }
+
+        backButton.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        GameManager.instance.BackToMainMenu();
     }
 }

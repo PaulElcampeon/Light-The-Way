@@ -55,3 +55,4 @@ MonoBehaviour:
   isGameOver: 0
   isLevelCompleted: 0
   isMenuOpen: 0
+  currentLevel: 0

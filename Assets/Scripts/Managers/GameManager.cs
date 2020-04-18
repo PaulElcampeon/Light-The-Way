@@ -21,19 +21,30 @@ public class GameManager : MonoBehaviour
     public bool isLevelCompleted;
     public bool isMenuOpen;
 
-    private int currentLevel;
+    public int currentLevel;
 
     public static GameManager instance;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
+
+        Load();
 
         if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
     }
 
+    //private void Start()
+    //{
+    //    instance = this;
+
+    //    if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
+    //}
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && CustomSceneManager.instance.CurrentScene() != "Main Menu") ShowGameMenu();
+
         if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
 
         CheckIfPlayerHasFallen();
@@ -65,6 +76,12 @@ public class GameManager : MonoBehaviour
         LevelUI.instance.ShowGamWinScreen();
     }
 
+    private void ShowGameMenu()
+    {
+        menu.SetActive(true);
+        Pause();
+    }
+
     private void CheckIfPlayerHasFallen()
     {
         if (Player.instance == null) return;
@@ -93,6 +110,7 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         UnPause();
+        Save();
         CustomSceneManager.instance.LoadScene((currentLevel+1).ToString());
     }
 
@@ -100,6 +118,31 @@ public class GameManager : MonoBehaviour
     {
         UnPause();
         CustomSceneManager.instance.ResetScene();
+    }
+
+    public void Save()
+    {
+        if (currentLevel >= 9) return;
+        
+        if (currentLevel > PlayerPrefs.GetInt("currentLevel"))
+        {
+            PlayerPrefs.SetInt("currentLevel", currentLevel+1);
+            PlayerPrefs.Save();
+            Debug.Log("Game data saved!");
+        }
+    }
+
+    public void Load()
+    {
+        if (PlayerPrefs.HasKey("currentLevel"))
+        {
+            currentLevel = PlayerPrefs.GetInt("currentLevel");
+            Debug.Log("Game data loaded!");
+        }
+        else
+        {
+            Debug.LogError("There is no save data!");
+        }
     }
 
     public void Pause()

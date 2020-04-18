@@ -156,6 +156,7 @@ public class Player : MonoBehaviour
         isGrounded = false;
         StartCoroutine(ResetJump());
         playerRGB.velocity = Vector2.up * jumpForce;
+        SoundManager.instance.PlaySFX(3);
     }
 
     public void ActivateFall()

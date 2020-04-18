@@ -12,11 +12,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource[] bgmSounds;
 
-    [Header("Volume Control")]
-    [SerializeField]
-    private float sfxVolume;
-    [SerializeField]
-    private float bgmVolume;
+    public float sfxVolume { get; set; }
+    public float bgmVolume { get; set; }
 
     public static SoundManager instance;
 
@@ -34,6 +31,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        sfxVolume = 0.5f;
+        bgmVolume = 0.4f;
+    }
+
     public void PlaySFX(int sfxIndex)
     {
         AudioSource sound = sfxSounds[sfxIndex];
@@ -48,30 +51,6 @@ public class SoundManager : MonoBehaviour
 
         sound.volume = bgmVolume;
         sound.Play();
-    }
-
-    public void SetSFXVolume(float volume)
-    {
-        if (!CheckIfVolumeInputIsCorrect(volume)) return;
-
-        sfxVolume = volume;
-    }
-
-    public void SetBGMVolume(float volume)
-    {
-        if (!CheckIfVolumeInputIsCorrect(volume)) return;
-
-        bgmVolume = volume;
-    }
-
-    public bool CheckIfVolumeInputIsCorrect(float volume)
-    {
-        if (volume < 0 || volume > 1)
-        {
-            Debug.LogError("Volume has to be between 0 and 1");
-            return false;
-        }
-        return true;
     }
 
     public static SoundManager Getinstance()
