@@ -43,7 +43,7 @@ public class GameMenu : MonoBehaviour
 
         if (soundMenu.activeInHierarchy) { soundMenu.SetActive(false); return; }
         if (controlsMenu.activeInHierarchy) { controlsMenu.SetActive(false); return; }
-        if (levelDifficultyMenu.activeInHierarchy) { levelDifficultyMenu.SetActive(false); return; }
+        //if (levelDifficultyMenu.activeInHierarchy) { levelDifficultyMenu.SetActive(false); return; }
 
         backButton.SetActive(false);
         gameObject.SetActive(false);
