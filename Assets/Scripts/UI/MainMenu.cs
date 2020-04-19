@@ -22,6 +22,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject creditPanel;
 
+    [SerializeField]
+    private GameObject showScoresMenu;
+
     public void StartNewGame()
     {
         SoundManager.instance.PlaySFX(0);
@@ -44,6 +47,12 @@ public class MainMenu : MonoBehaviour
     {
         SoundManager.instance.PlaySFX(0);
         optionsMenu.SetActive(true);
+    }
+
+    public void ShowScoresMenu()
+    {
+        SoundManager.instance.PlaySFX(0);
+        showScoresMenu.SetActive(true);
     }
 
     public void ShowControlsOption()
@@ -110,6 +119,12 @@ public class MainMenu : MonoBehaviour
         if (creditPanel.activeInHierarchy)
         {
             creditPanel.SetActive(false);
+            return;
+        }
+
+        if (showScoresMenu.activeInHierarchy)
+        {
+            showScoresMenu.SetActive(false);
             return;
         }
         optionsMenu.SetActive(false);

@@ -23,11 +23,15 @@ public class GameManager : MonoBehaviour
 
     public int currentLevel;
 
+    public float[] scores;
+
     public static GameManager instance;
 
     private void Awake()
     {
         instance = this;
+
+        scores = LoadScores();
     }
 
     private void Start()
@@ -120,14 +124,32 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("currentLevel") > currentLevel) return;
 
         PlayerPrefs.SetInt("currentLevel", currentLevel+1);
+        if (currentLevel > 0) SaveTime();
         PlayerPrefs.Save();
         Debug.Log("Game data saved!");
     }
 
+    public void SaveTime()
+    {
+        float timeTaken = Timer.instance.timeTaken;
+
+        if (PlayerPrefs.HasKey("timer_" + currentLevel))
+        {
+            if (PlayerPrefs.GetFloat("timer_" + currentLevel) > timeTaken)
+            {
+                PlayerPrefs.SetFloat("timer_" + currentLevel, timeTaken);
+            }
+
+        } else
+        {
+            PlayerPrefs.SetFloat("timer_" + currentLevel, timeTaken);
+        }
+
+        Debug.Log("Saving Time");
+    }
+
     public void Load()
     {
-        Debug.Log(PlayerPrefs.HasKey("currentLevel"));
-
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             currentLevel = PlayerPrefs.GetInt("currentLevel");
@@ -138,6 +160,21 @@ public class GameManager : MonoBehaviour
             Debug.LogError("There is no save data!");
         }
     }
+
+    public float[] LoadScores()
+    {
+        float[] scores = new float[10];
+
+        for (int i = 1; i < 10; i++)
+        {
+            if (PlayerPrefs.HasKey("timer_" + i))
+            {
+                scores[i] = PlayerPrefs.GetFloat("timer_" + i);
+            }
+        }
+
+        return scores;
+    } 
 
     public int GetLastLevel()
     {

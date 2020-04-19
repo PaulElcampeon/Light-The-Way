@@ -26,6 +26,7 @@ public class Refuge : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            if (Timer.instance != null) Timer.instance.shouldStop = true;
             GameManager.instance.Save();
             //other.gameObject.GetComponent<Player>().StopMovement();
             ActivateBehaviours();
