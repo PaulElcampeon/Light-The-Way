@@ -20,6 +20,8 @@ public class ScoresUI : MonoBehaviour
         {
             float[] scores = GameManager.instance.scores;
 
+            if (scores[1] == 0f) return;
+
             warningText.SetActive(false);
 
             for (int i = 1; i < scores.Length; i++)
