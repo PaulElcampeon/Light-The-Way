@@ -14,7 +14,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject backButton;
 
-    private void Start()
+    private void OnEnable()
     {
         backButton.SetActive(true);
     }

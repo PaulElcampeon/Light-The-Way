@@ -28,18 +28,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        Load();
-
-        if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
     }
 
-    //private void Start()
-    //{
-    //    instance = this;
-
-    //    if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
-    //}
+    private void Start()
+    {
+        if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
+    }
 
     void Update()
     {
@@ -110,7 +104,6 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         UnPause();
-        Save();
         CustomSceneManager.instance.LoadScene((currentLevel+1).ToString());
     }
 
@@ -123,17 +116,18 @@ public class GameManager : MonoBehaviour
     public void Save()
     {
         if (currentLevel >= 9) return;
-        
-        if (currentLevel > PlayerPrefs.GetInt("currentLevel"))
-        {
-            PlayerPrefs.SetInt("currentLevel", currentLevel+1);
-            PlayerPrefs.Save();
-            Debug.Log("Game data saved!");
-        }
+
+        if (PlayerPrefs.GetInt("currentLevel") > currentLevel) return;
+
+        PlayerPrefs.SetInt("currentLevel", currentLevel+1);
+        PlayerPrefs.Save();
+        Debug.Log("Game data saved!");
     }
 
     public void Load()
     {
+        Debug.Log(PlayerPrefs.HasKey("currentLevel"));
+
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             currentLevel = PlayerPrefs.GetInt("currentLevel");
@@ -142,6 +136,22 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("There is no save data!");
+        }
+    }
+
+    public int GetLastLevel()
+    {
+        if (PlayerPrefs.HasKey("currentLevel")) return PlayerPrefs.GetInt("currentLevel");
+
+        return 0;
+    }
+
+    public void ResetSavedData()
+    {
+        if (PlayerPrefs.HasKey("currentLevel"))
+        {
+            PlayerPrefs.DeleteKey("currentLevel");
+            Debug.Log("Game data reset!");
         }
     }
 

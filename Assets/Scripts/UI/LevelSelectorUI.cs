@@ -13,13 +13,15 @@ public class LevelSelectorUI : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.instance.currentLevel > 0)
+        int lastLevel = GameManager.instance.GetLastLevel();
+
+        if (lastLevel > 0)
         {
             warningText.SetActive(false);
 
             for (int i = 0; i < levelSelectorButtons.Length; i++)
             {
-                if (GameManager.instance.currentLevel >= i)
+                if (lastLevel > i)
                 {
                     levelSelectorButtons[i].SetActive(true);
                 }

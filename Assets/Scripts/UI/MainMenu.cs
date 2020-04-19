@@ -24,14 +24,15 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-        CustomSceneManager.instance.LoadScene("Tutorial");
         SoundManager.instance.PlaySFX(0);
+        GameManager.instance.ResetSavedData();
+        CustomSceneManager.instance.LoadScene("Tutorial");
     }
 
     public void ShowLevels()
     {
-        levelSelector.SetActive(true);
         SoundManager.instance.PlaySFX(0);
+        levelSelector.SetActive(true);
     }
 
     public void LoadLevel(int level)
@@ -41,20 +42,20 @@ public class MainMenu : MonoBehaviour
 
     public void ShowOptionsMenu()
     {
-        optionsMenu.SetActive(true);
         SoundManager.instance.PlaySFX(0);
+        optionsMenu.SetActive(true);
     }
 
     public void ShowControlsOption()
     {
-        controlOptions.SetActive(true);
         SoundManager.instance.PlaySFX(0);
+        controlOptions.SetActive(true);
     }
 
     public void ShowSoundOption()
     {
-        soundOptions.SetActive(true);
         SoundManager.instance.PlaySFX(0);
+        soundOptions.SetActive(true);
     }
 
     public void SetBgmVolume()
@@ -69,8 +70,8 @@ public class MainMenu : MonoBehaviour
 
     public void ShowDifficultyOption()
     {
-        difficultyOptions.SetActive(false);
         SoundManager.instance.PlaySFX(0);
+        difficultyOptions.SetActive(false);
     }
 
     public void SetDifficulty(int difficultyLevel)
@@ -116,8 +117,8 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
-        creditPanel.SetActive(true);
         SoundManager.instance.PlaySFX(0);
+        creditPanel.SetActive(true);
     }
 
     public void ExitGame()
