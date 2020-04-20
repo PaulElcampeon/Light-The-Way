@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (CustomSceneManager.instance.CurrentScene() != "Main Menu") SoundManager.instance.PlayBGM(0);
+
         if (LevelHolder.instance != null) currentLevel = LevelHolder.instance.level;
     }
 
@@ -76,6 +78,8 @@ public class GameManager : MonoBehaviour
 
     private void ShowGameMenu()
     {
+        SoundManager.instance.PlaySFX(0);
+
         menu.SetActive(true);
         Pause();
     }
@@ -84,6 +88,8 @@ public class GameManager : MonoBehaviour
     {
         if (Player.instance == null) return;
         if (Player.instance.transform.position.y > -6) return;
+
+        SoundManager.instance.PlaySFX(2);
 
         isGameOver = true;
     }
@@ -101,19 +107,28 @@ public class GameManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        SoundManager.instance.PlaySFX(1);
+
         UnPause();
+
         CustomSceneManager.instance.LoadScene("Main Menu");
     }
 
     public void LoadNextLevel()
     {
+        SoundManager.instance.PlaySFX(0);
+
         UnPause();
+
         CustomSceneManager.instance.LoadScene((currentLevel+1).ToString());
     }
 
     public void ResetLevel()
     {
+        SoundManager.instance.PlaySFX(0);
+
         UnPause();
+
         CustomSceneManager.instance.ResetScene();
     }
 
@@ -124,8 +139,11 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("currentLevel") > currentLevel) return;
 
         PlayerPrefs.SetInt("currentLevel", currentLevel+1);
+
         if (currentLevel > 0) SaveTime();
+
         PlayerPrefs.Save();
+
         Debug.Log("Game data saved!");
     }
 
@@ -153,6 +171,7 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             currentLevel = PlayerPrefs.GetInt("currentLevel");
+
             Debug.Log("Game data loaded!");
         }
         else
@@ -188,6 +207,7 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             PlayerPrefs.DeleteKey("currentLevel");
+
             Debug.Log("Game data reset!");
         }
     }
@@ -205,6 +225,7 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Debug.Log("Quiting Game...");
+
         Application.Quit();
     }
 }

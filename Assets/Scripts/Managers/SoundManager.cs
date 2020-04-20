@@ -19,6 +19,8 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        Screen.fullScreen = true;
+
         DontDestroyOnLoad(this);
 
         if (instance == null)
@@ -51,6 +53,15 @@ public class SoundManager : MonoBehaviour
 
         sound.volume = bgmVolume;
         sound.Play();
+    }
+
+
+    public void StopCurrentBGM()
+    {
+        for (int i=0; i < bgmSounds.Length; i++)
+        {
+            if (bgmSounds[i].isPlaying) bgmSounds[i].Stop();
+        }
     }
 
     public static SoundManager Getinstance()

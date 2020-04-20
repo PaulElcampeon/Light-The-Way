@@ -28,13 +28,16 @@ public class MainMenu : MonoBehaviour
     public void StartNewGame()
     {
         SoundManager.instance.PlaySFX(0);
+
         GameManager.instance.ResetSavedData();
+
         CustomSceneManager.instance.LoadScene("Tutorial");
     }
 
     public void ShowLevels()
     {
         SoundManager.instance.PlaySFX(0);
+
         levelSelector.SetActive(true);
     }
 
@@ -46,18 +49,21 @@ public class MainMenu : MonoBehaviour
     public void ShowOptionsMenu()
     {
         SoundManager.instance.PlaySFX(0);
+
         optionsMenu.SetActive(true);
     }
 
     public void ShowScoresMenu()
     {
         SoundManager.instance.PlaySFX(0);
+
         showScoresMenu.SetActive(true);
     }
 
     public void ShowControlsOption()
     {
         SoundManager.instance.PlaySFX(0);
+
         controlOptions.SetActive(true);
     }
 
@@ -80,6 +86,7 @@ public class MainMenu : MonoBehaviour
     public void ShowDifficultyOption()
     {
         SoundManager.instance.PlaySFX(0);
+
         difficultyOptions.SetActive(false);
     }
 
@@ -133,12 +140,14 @@ public class MainMenu : MonoBehaviour
     public void ShowCredits()
     {
         SoundManager.instance.PlaySFX(0);
+
         creditPanel.SetActive(true);
     }
 
     public void ExitGame()
     {
-        SoundManager.instance.PlaySFX(0);
+        SoundManager.instance.PlaySFX(1);
+
         GameManager.instance.ExitGame();
     }
 }

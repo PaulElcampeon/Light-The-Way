@@ -36,6 +36,7 @@ public class LevelSelectorUI : MonoBehaviour
     public void Close()
     {
         SoundManager.instance.PlaySFX(1);
+
         gameObject.SetActive(false);
     }
 }

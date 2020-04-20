@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
 
         isDead = true;
 
+        SoundManager.instance.PlaySFX(2);
+
         StopMovement();
 
         playerAnimator.SetTrigger("Dead");
@@ -156,7 +158,8 @@ public class Player : MonoBehaviour
         isGrounded = false;
         StartCoroutine(ResetJump());
         playerRGB.velocity = Vector2.up * jumpForce;
-        SoundManager.instance.PlaySFX(3);
+
+        SoundManager.instance.PlaySFX(4);
     }
 
     public void ActivateFall()

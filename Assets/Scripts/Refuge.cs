@@ -26,10 +26,15 @@ public class Refuge : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            SoundManager.instance.PlaySFX(6);
+
             if (Timer.instance != null) Timer.instance.shouldStop = true;
+
             GameManager.instance.Save();
             //other.gameObject.GetComponent<Player>().StopMovement();
+
             ActivateBehaviours();
+
             GameManager.instance.isLevelCompleted = true;
         }
 

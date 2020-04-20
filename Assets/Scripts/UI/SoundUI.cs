@@ -8,6 +8,7 @@ public class SoundUI : MonoBehaviour
     [Header("Sound sliders")]
     [SerializeField]
     private Slider bgmSlider;
+
     [SerializeField]
     private Slider sfxSlider;
 

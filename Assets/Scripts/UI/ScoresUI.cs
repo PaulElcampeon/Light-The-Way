@@ -31,7 +31,7 @@ public class ScoresUI : MonoBehaviour
                 if (scores[i] != 0f)
                 {
                     levelSelectorButtons[i - 1].gameObject.SetActive(true);
-                    levelSelectorButtons[i-1].GetComponentInChildren<Text>().text = "LEVEL " + i + ": " + (Mathf.Round(scores[i] * 100) / 100.0).ToString() + " seconds";
+                    levelSelectorButtons[i-1].GetComponentInChildren<Text>().text = "LEVEL " + i + "\n\n" + (Mathf.Round(scores[i] * 100) / 100.0).ToString() + " seconds";
                 }
             }
         }
@@ -40,6 +40,7 @@ public class ScoresUI : MonoBehaviour
     public void Close()
     {
         SoundManager.instance.PlaySFX(1);
+
         gameObject.SetActive(false);
     }
 }

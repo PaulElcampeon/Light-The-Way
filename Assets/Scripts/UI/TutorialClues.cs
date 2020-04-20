@@ -6,11 +6,11 @@ public class TutorialClues : MonoBehaviour
 {
     [SerializeField]
     private GameObject aimClue;
-
     [SerializeField]
+
     private GameObject enemyClue;
-
     [SerializeField]
+
     private GameObject actionClue;
 
     public bool isClueShowing;
@@ -44,8 +44,11 @@ public class TutorialClues : MonoBehaviour
 
     public void OpenMenuItem()
     {
-        GameManager.instance.isMenuOpen = true;
+        SoundManager.instance.PlaySFX(0);
+
         isClueShowing = true;
+
+        GameManager.instance.isMenuOpen = true;
         GameManager.instance.Pause();
     }
 
@@ -54,8 +57,10 @@ public class TutorialClues : MonoBehaviour
         aimClue.SetActive(false);
         enemyClue.SetActive(false);
         actionClue.SetActive(false);
+
         GameManager.instance.UnPause();
         GameManager.instance.isMenuOpen = false;
+
         isClueShowing = false;
     }
 }
