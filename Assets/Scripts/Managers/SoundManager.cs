@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         sfxVolume = 0.5f;
-        bgmVolume = 0.4f;
+        bgmVolume = 0.05f;
     }
 
     public void PlaySFX(int sfxIndex)
@@ -54,7 +54,6 @@ public class SoundManager : MonoBehaviour
         sound.volume = bgmVolume;
         sound.Play();
     }
-
 
     public void StopCurrentBGM()
     {

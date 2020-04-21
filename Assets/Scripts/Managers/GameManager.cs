@@ -208,7 +208,16 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("currentLevel");
 
-            Debug.Log("Game data reset!");
+            Debug.Log("Level data reset!");
+        }
+
+        if (PlayerPrefs.HasKey("timer_1"))
+        {
+            for (int i=0; i<10; i++)
+            {
+                if (PlayerPrefs.HasKey("timer_"+i)) PlayerPrefs.DeleteKey("timer_" + i);
+            }
+            Debug.Log("Timer data reset!");
         }
     }
 
