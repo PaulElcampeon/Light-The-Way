@@ -14,6 +14,9 @@ public class LevelUI : MonoBehaviour
     [SerializeField]
     private GameObject inGameMenu;
 
+    [SerializeField]
+    private GameObject nextLevelButton;
+
     public static LevelUI instance;
 
     void Start()
@@ -35,6 +38,8 @@ public class LevelUI : MonoBehaviour
         SoundManager.instance.PlaySFX(0);
        
         gameWinScreen.SetActive(true);
+
+        if (LevelHolder.instance.level == 9) nextLevelButton.SetActive(false);
     }
 
     public void ShowInGameMenu()

@@ -20,9 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject lightReference;
 
-    [Header("Attributes")]
-    [SerializeField]
-    private int layTimes = 5;
+    private int noOfLights = 5;
 
     [Header("Layer masks")]
     [SerializeField]
@@ -126,7 +124,7 @@ public class Player : MonoBehaviour
 
     private void ThrowLight()
     {
-        layTimes--;
+        noOfLights--;
 
         Vector2 velocity = new Vector2(-5f, 5f);
 
@@ -136,12 +134,12 @@ public class Player : MonoBehaviour
 
         throwLight.GetComponent<Rigidbody2D>().velocity = velocity;
 
-        GameManager.instance.UpdateLightsHud(layTimes);
+        GameManager.instance.UpdateLightsHud(noOfLights);
     }
 
     private void ListenForThrowLightInput()
     {
-        if (layTimes <= 0) return;
+        if (noOfLights <= 0) return;
 
         if (Input.GetKeyDown(KeyCode.E) && !isDead) ThrowLight(); ;
     }

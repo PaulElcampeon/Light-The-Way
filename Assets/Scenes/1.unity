@@ -2727,6 +2727,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 8197682610500806081}
   gameWinScreen: {fileID: 3189798165408238438}
   inGameMenu: {fileID: 2197355015649277591}
+  nextLevelButton: {fileID: 0}
 --- !u!114 &1940577795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3567,6 +3568,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001209171617654783, guid: 2df67f1ed7c39484f90fa8f1faa4eef2,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001209171617654783, guid: 2df67f1ed7c39484f90fa8f1faa4eef2,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df67f1ed7c39484f90fa8f1faa4eef2, type: 3}
