@@ -1651,6 +1651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Menu Back Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1383121651933607263, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1383121651933607262, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1771,6 +1776,12 @@ PrefabInstance:
 --- !u!224 &560623927 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1383121651933607262, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
+    type: 3}
+  m_PrefabInstance: {fileID: 560623926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &560623928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1383121651933607263, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
     type: 3}
   m_PrefabInstance: {fileID: 560623926}
   m_PrefabAsset: {fileID: 0}
@@ -4471,6 +4482,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1857164208, guid: 09bcb43429a8e8e48adb8b046bf4b81a, type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 560623928}
     - target: {fileID: 959523017425887942, guid: 09bcb43429a8e8e48adb8b046bf4b81a,
         type: 3}
       propertyPath: m_AnchorMin.y
