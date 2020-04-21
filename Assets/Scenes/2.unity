@@ -2246,6 +2246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Control Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 4831579996413736256, guid: 7f73a467d39571b419a1b0b76cc7757f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4831579996413736257, guid: 7f73a467d39571b419a1b0b76cc7757f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2487,6 +2492,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2197355015649277593}
+    - target: {fileID: 1383121651933607261, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf, type: 3}
 --- !u!1 &729311265 stripped
@@ -3336,11 +3346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 762536860}
+      objectReference: {fileID: 2197355015649277593}
     - target: {fileID: 959523017420316539, guid: 09bcb43429a8e8e48adb8b046bf4b81a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMainMenu
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 959523017420316539, guid: 09bcb43429a8e8e48adb8b046bf4b81a,
         type: 3}

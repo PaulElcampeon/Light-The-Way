@@ -674,10 +674,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b1f1e2494c87a41a55adc892f62b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundMenu: {fileID: 0}
-  controlsMenu: {fileID: 0}
+  soundMenu: {fileID: 6300912978745142026, guid: 50a630720cd498747b24d744fd604c52,
+    type: 3}
+  controlsMenu: {fileID: 4831579996413736256, guid: 7f73a467d39571b419a1b0b76cc7757f,
+    type: 3}
   levelDifficultyMenu: {fileID: 0}
-  backButton: {fileID: 0}
+  backButton: {fileID: 1383121651933607263, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
+    type: 3}
 --- !u!1 &959523018370287061
 GameObject:
   m_ObjectHideFlags: 0
