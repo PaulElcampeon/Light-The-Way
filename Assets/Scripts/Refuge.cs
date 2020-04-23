@@ -31,14 +31,11 @@ public class Refuge : MonoBehaviour
             if (Timer.instance != null) Timer.instance.shouldStop = true;
 
             GameManager.instance.Save();
-            //other.gameObject.GetComponent<Player>().StopMovement();
 
             ActivateBehaviours();
 
             GameManager.instance.isLevelCompleted = true;
         }
-
-        //if (other.gameObject.tag == "Enemy") Debug.Log("Yipeee");
     }
 
     private void OnTriggerStay2D(Collider2D other)

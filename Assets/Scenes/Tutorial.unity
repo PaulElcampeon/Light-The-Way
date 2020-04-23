@@ -1675,6 +1675,75 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1326677760787170168}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &869633626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8192279557030316593, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_Name
+      value: Dead Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192279557030316599, guid: cf06e615c67847940b12a8e8c20a660f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf06e615c67847940b12a8e8c20a660f, type: 3}
 --- !u!1 &963801226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5472932237411544005, guid: ef5aef860f5e2354794206b15a269e7c,
@@ -2789,6 +2858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game Menu Back Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383121651933607263, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1383121651933607262, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
         type: 3}

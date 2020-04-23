@@ -56,16 +56,4 @@ public class LevelUI : MonoBehaviour
         GameManager.instance.isMenuOpen = true;
         GameManager.instance.Pause();
     }
-
-    //public void CloseActivePanel()
-    //{
-    //    SoundManager.instance.PlaySFX(1);
-
-    //    if (gameOverScreen.activeInHierarchy) gameOverScreen.SetActive(false);
-    //    if (gameWinScreen.activeInHierarchy) gameWinScreen.SetActive(false);
-    //    if (inGameMenu.activeInHierarchy) inGameMenu.SetActive(false);
-
-    //    GameManager.instance.UnPause();
-    //    GameManager.instance.isMenuOpen = false;
-    //}
 }

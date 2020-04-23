@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject lightReference;
 
-    private int noOfLights = 5;
+    private int noOfLights = 6;
 
     [Header("Layer masks")]
     [SerializeField]
@@ -104,9 +104,15 @@ public class Player : MonoBehaviour
         if (movementDir != 0) lastMovementInput = movementDir;
         if (movementDir == 0) isMoving = false;
         if (movementDir != 0) isMoving = true;
-        if (!canMove) movementDir = 0;
 
-        playerRGB.velocity = new Vector2(movementDir * movementSpeed, playerRGB.velocity.y);
+        if (!canMove)
+        {
+            playerRGB.velocity = new Vector2(0, 0);
+        }
+        else
+        {
+            playerRGB.velocity = new Vector2(movementDir * movementSpeed, playerRGB.velocity.y);
+        }
     }
 
     public void StopMovement()

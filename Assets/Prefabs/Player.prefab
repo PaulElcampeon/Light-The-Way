@@ -56,8 +56,8 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.85
-  m_PointLightOuterRadius: 3.96
+  m_PointLightInnerRadius: 0.8
+  m_PointLightOuterRadius: 3
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -122,11 +122,11 @@ MonoBehaviour:
   fallingGravity: 3
   lightReference: {fileID: 6008393038698826520, guid: 5c6fce3792ea62b47a7edf977c1ae990,
     type: 3}
-  layTimes: 10
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 512
   isJumping: 0
+  isMoving: 0
   isDead: 0
 --- !u!50 &9001209172742535347
 Rigidbody2D:
@@ -245,7 +245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d60daecc8b7931043aa9e71423f689dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

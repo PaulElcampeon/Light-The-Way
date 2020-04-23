@@ -47,8 +47,6 @@ public class GameManager : MonoBehaviour
 
         if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
 
-        CheckIfPlayerHasFallen();
-
         if (isGameOver && !gameOverScreen.activeInHierarchy)
         {
             StartCoroutine(ShowGameOverScreen());
@@ -82,16 +80,6 @@ public class GameManager : MonoBehaviour
 
         menu.SetActive(true);
         Pause();
-    }
-
-    private void CheckIfPlayerHasFallen()
-    {
-        if (Player.instance == null) return;
-        if (Player.instance.transform.position.y > -6) return;
-
-        SoundManager.instance.PlaySFX(2);
-
-        isGameOver = true;
     }
 
     public void UpdateLightsHud(int numberOfLightsLeft)
@@ -134,6 +122,15 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
+        if (currentLevel == 9)
+        {
+            if (currentLevel > 0) SaveTime();
+
+            PlayerPrefs.Save();
+
+            Debug.Log("Game data saved!");
+        }
+
         if (currentLevel >= 9) return;
 
         if (PlayerPrefs.GetInt("currentLevel") > currentLevel) return;

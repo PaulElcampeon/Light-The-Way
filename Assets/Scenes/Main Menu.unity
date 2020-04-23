@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5980,6 +5980,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4902917128839772566}
+    - target: {fileID: 2566910086313862742, guid: 9b3081e3f5edb774db7f795a332d86a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3081e3f5edb774db7f795a332d86a6, type: 3}
 --- !u!1001 &4902917128839772565
@@ -5993,6 +5998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Menu Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902917128635508307, guid: 6013d36eaae94a9439c7e059be666bf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4902917128635508306, guid: 6013d36eaae94a9439c7e059be666bf8,
         type: 3}
