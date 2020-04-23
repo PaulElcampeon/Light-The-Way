@@ -3563,6 +3563,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 654156821}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &654156823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6300912978745142026, guid: 50a630720cd498747b24d744fd604c52,
+    type: 3}
+  m_PrefabInstance: {fileID: 654156821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &685658151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +3763,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f73a467d39571b419a1b0b76cc7757f, type: 3}
+--- !u!1 &720461671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4831579996413736256, guid: 7f73a467d39571b419a1b0b76cc7757f,
+    type: 3}
+  m_PrefabInstance: {fileID: 720461670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &720461672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4831579996413736257, guid: 7f73a467d39571b419a1b0b76cc7757f,
@@ -4997,6 +5009,14 @@ PrefabInstance:
       propertyPath: backButton
       value: 
       objectReference: {fileID: 1927214101}
+    - target: {fileID: 1857164208, guid: 09bcb43429a8e8e48adb8b046bf4b81a, type: 3}
+      propertyPath: soundMenu
+      value: 
+      objectReference: {fileID: 654156823}
+    - target: {fileID: 1857164208, guid: 09bcb43429a8e8e48adb8b046bf4b81a, type: 3}
+      propertyPath: controlsMenu
+      value: 
+      objectReference: {fileID: 720461671}
     - target: {fileID: 959523017425887942, guid: 09bcb43429a8e8e48adb8b046bf4b81a,
         type: 3}
       propertyPath: m_AnchorMin.y

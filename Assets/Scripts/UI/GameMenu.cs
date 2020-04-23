@@ -20,7 +20,6 @@ public class GameMenu : MonoBehaviour
     private void OnEnable()
     {
         backButton.SetActive(true);
-        Debug.Log("This was called");
     }
 
     public void ShowSoundMenu()
@@ -28,6 +27,7 @@ public class GameMenu : MonoBehaviour
         SoundManager.instance.PlaySFX(0);
 
         soundMenu.SetActive(true);
+        Debug.Log(soundMenu.activeInHierarchy);
 
         GameManager.instance.Pause();
     }
