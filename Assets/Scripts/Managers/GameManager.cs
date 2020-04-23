@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && CustomSceneManager.instance.CurrentScene() != "Main Menu") ShowGameMenu();
+        if (Input.GetKeyDown(KeyCode.Escape) && CustomSceneManager.instance.CurrentScene() != "Main Menu" && !menu.activeInHierarchy) ShowGameMenu();
 
         if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
 

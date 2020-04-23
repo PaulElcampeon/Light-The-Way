@@ -7123,6 +7123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Control Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 4831579996413736256, guid: 7f73a467d39571b419a1b0b76cc7757f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4831579996413736257, guid: 7f73a467d39571b419a1b0b76cc7757f,
         type: 3}
       propertyPath: m_LocalPosition.x
