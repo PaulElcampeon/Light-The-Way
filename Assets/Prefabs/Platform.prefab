@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf06d189bcc29e47b4d7373611eb991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToMove: 4
-  shouldMoveVeritcal: 1
-  targetPosition: {x: 0, y: 0, z: 0}
+  distanceToMove: 11
+  shouldMoveVeritcal: 0
+  speed: 0.1
 --- !u!61 &5653388710186323535
 BoxCollider2D:
   m_ObjectHideFlags: 0
