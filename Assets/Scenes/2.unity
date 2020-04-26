@@ -1691,6 +1691,11 @@ PrefabInstance:
       propertyPath: distanceToMove
       value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5653388710186323532, guid: 52fd5662178e8ff41a4de418738c4436,
+        type: 3}
+      propertyPath: shouldMoveVeritcal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52fd5662178e8ff41a4de418738c4436, type: 3}
 --- !u!4 &402956296 stripped
@@ -4213,6 +4218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: distanceToMove
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653388710186323532, guid: 52fd5662178e8ff41a4de418738c4436,
+        type: 3}
+      propertyPath: shouldMoveVeritcal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52fd5662178e8ff41a4de418738c4436, type: 3}
