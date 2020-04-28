@@ -70,8 +70,6 @@ public class Player : MonoBehaviour
 
         ListenForJumpInput();
 
-        ListenForThrowLightInput();
-
         CheckIfGrounded();
     }
 
@@ -142,8 +140,10 @@ public class Player : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, refugePosition, 2f * Time.deltaTime);
     }
 
-    private void ThrowLight()
+    public void ThrowLight()
     {
+        if (noOfLights <= 0) return;
+
         noOfLights--;
 
         Vector2 velocity = new Vector2(-5f, 5f);
@@ -155,13 +155,6 @@ public class Player : MonoBehaviour
         throwLight.GetComponent<Rigidbody2D>().velocity = velocity;
 
         GameManager.instance.UpdateLightsHud(noOfLights);
-    }
-
-    private void ListenForThrowLightInput()
-    {
-        if (noOfLights <= 0) return;
-
-        if (Input.GetKeyDown(KeyCode.E) && !isDead) ThrowLight(); ;
     }
 
     private void ListenForJumpInput()
