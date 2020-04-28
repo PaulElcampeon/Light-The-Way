@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
 
     private Animator playerAnimator;
 
+    [Header("Joystick")]
+    [SerializeField]
+    private Joystick joystick;
+
     private float movementDir;
     private float lastMovementInput;
     public bool isJumping;
@@ -52,7 +56,17 @@ public class Player : MonoBehaviour
     {
         if (isDead || GameManager.instance.isMenuOpen) return;
 
-        movementDir = Input.GetAxisRaw("Horizontal");
+        if (joystick.Horizontal >= 0.2f)
+        {
+            movementDir = 1;
+        }
+        else if (joystick.Horizontal <= -0.2f)
+        {
+            movementDir = -1;
+        } else
+        {
+            movementDir = 0;
+        }
 
         ListenForJumpInput();
 
@@ -152,7 +166,7 @@ public class Player : MonoBehaviour
 
     private void ListenForJumpInput()
     {
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded && !isDead) isJumping = true;
+        if (joystick.Vertical >= 0.5f && isGrounded && !isDead) isJumping = true;
     }
 
     private void ActivateJump()
