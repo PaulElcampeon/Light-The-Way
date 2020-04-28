@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1416,12 +1416,12 @@ PrefabInstance:
     - target: {fileID: 6300912977474507909, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912977474507909, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912977474507909, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
@@ -1436,12 +1436,12 @@ PrefabInstance:
     - target: {fileID: 6300912977779666072, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912977779666072, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912977779666072, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
@@ -1456,12 +1456,12 @@ PrefabInstance:
     - target: {fileID: 6300912978299257952, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912978299257952, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912978299257952, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
@@ -1476,12 +1476,12 @@ PrefabInstance:
     - target: {fileID: 6300912978231334406, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912978231334406, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6300912978231334406, guid: 50a630720cd498747b24d744fd604c52,
         type: 3}
@@ -1680,12 +1680,12 @@ PrefabInstance:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 124
+      value: 147
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -3196,6 +3196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Menu Back Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1383121651933607263, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1383121651933607262, guid: 7ac6f7a32262a6a40a4cea51b5e2cebf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3447,12 +3452,12 @@ PrefabInstance:
     - target: {fileID: 2594487759763175084, guid: d6de7624731bd3440848e66056d05e85,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 508
+      value: 677
       objectReference: {fileID: 0}
     - target: {fileID: 2594487759763175084, guid: d6de7624731bd3440848e66056d05e85,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -340
+      value: -327
       objectReference: {fileID: 0}
     - target: {fileID: 2594487759763175084, guid: d6de7624731bd3440848e66056d05e85,
         type: 3}
