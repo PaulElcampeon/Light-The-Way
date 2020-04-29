@@ -22,11 +22,6 @@ public class TutorialClues : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space)) CloseActiveClue();
-    }
-
     public void ShowAimClue()
     {
         aimClue.SetActive(true);
@@ -52,7 +47,7 @@ public class TutorialClues : MonoBehaviour
         GameManager.instance.Pause();
     }
 
-    private void CloseActiveClue()
+    public void CloseActiveClue()
     {
         aimClue.SetActive(false);
         enemyClue.SetActive(false);

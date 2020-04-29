@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //Screen.fullScreen = true;
+
         instance = this;
 
         scores = LoadScores();
@@ -43,8 +45,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && CustomSceneManager.instance.CurrentScene() != "Main Menu" && !menu.activeInHierarchy) ShowGameMenu();
-
         if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
 
         if (isGameOver && !gameOverScreen.activeInHierarchy)
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         LevelUI.instance.ShowGamWinScreen();
     }
 
-    private void ShowGameMenu()
+    public void ShowGameMenu()
     {
         SoundManager.instance.PlaySFX(0);
 
