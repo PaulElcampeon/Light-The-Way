@@ -157,9 +157,9 @@ public class Player : MonoBehaviour
         GameManager.instance.UpdateLightsHud(noOfLights);
     }
 
-    private void ListenForJumpInput()
+    public void ListenForJumpInput()
     {
-        if (joystick.Vertical >= 0.5f && isGrounded && !isDead) isJumping = true;
+        if (isGrounded && !isDead) isJumping = true;
     }
 
     private void ActivateJump()
