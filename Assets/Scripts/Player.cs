@@ -56,11 +56,11 @@ public class Player : MonoBehaviour
     {
         if (isDead || GameManager.instance.isMenuOpen) return;
 
-        if (joystick.Horizontal >= 0.4f)
+        if (joystick.Horizontal >= 0.3f)
         {
             movementDir = 1;
         }
-        else if (joystick.Horizontal <= -0.4f)
+        else if (joystick.Horizontal <= -0.3f)
         {
             movementDir = -1;
         } else
