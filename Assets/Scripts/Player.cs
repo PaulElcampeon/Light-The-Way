@@ -56,19 +56,17 @@ public class Player : MonoBehaviour
     {
         if (isDead || GameManager.instance.isMenuOpen) return;
 
-        if (joystick.Horizontal >= 0.2f)
+        if (joystick.Horizontal >= 0.4f)
         {
             movementDir = 1;
         }
-        else if (joystick.Horizontal <= -0.2f)
+        else if (joystick.Horizontal <= -0.4f)
         {
             movementDir = -1;
         } else
         {
             movementDir = 0;
         }
-
-        ListenForJumpInput();
 
         CheckIfGrounded();
     }
