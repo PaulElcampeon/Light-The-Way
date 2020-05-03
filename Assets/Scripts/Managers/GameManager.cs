@@ -179,6 +179,8 @@ public class GameManager : MonoBehaviour
 
     public float[] LoadScores()
     {
+        Debug.Log("Loading scores");
+
         float[] scores = new float[10];
 
         for (int i = 1; i < 10; i++)
