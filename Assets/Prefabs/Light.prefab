@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6008393038698826518}
   - component: {fileID: 5568037781652111496}
   m_Layer: 12
-  m_Name: ThrowLight
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edc4ca279c1db54f8dde18cb8174cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToExhaust: 6
 --- !u!1 &6008393039521062683
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,8 +151,8 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.66
-  m_PointLightOuterRadius: 1.8
+  m_PointLightInnerRadius: 1.5
+  m_PointLightOuterRadius: 2.5
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5

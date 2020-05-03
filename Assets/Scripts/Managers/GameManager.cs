@@ -133,7 +133,14 @@ public class GameManager : MonoBehaviour
 
         if (currentLevel >= 9) return;
 
-        if (PlayerPrefs.GetInt("currentLevel") > currentLevel) return;
+        if (PlayerPrefs.GetInt("currentLevel") > currentLevel)
+        {
+            if (currentLevel > 0) SaveTime();
+
+            PlayerPrefs.Save();
+
+            return;
+        }
 
         PlayerPrefs.SetInt("currentLevel", currentLevel+1);
 
@@ -179,8 +186,6 @@ public class GameManager : MonoBehaviour
 
     public float[] LoadScores()
     {
-        Debug.Log("Loading scores");
-
         float[] scores = new float[10];
 
         for (int i = 1; i < 10; i++)

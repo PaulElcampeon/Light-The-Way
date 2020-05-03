@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        Screen.fullScreen = true;
+        //Screen.fullScreen = false;
 
         DontDestroyOnLoad(this);
 
