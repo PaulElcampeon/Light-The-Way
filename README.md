@@ -2,4 +2,4 @@
 
 Simple 2D Puzzle Platformer game made using Unity 
 
-https://paultheindiedev.itch.io/light-the-way
+Link: https://paultheindiedev.itch.io/light-the-way
