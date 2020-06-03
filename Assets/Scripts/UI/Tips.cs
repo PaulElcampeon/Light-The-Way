@@ -2,30 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialClues : MonoBehaviour
+public class Tips : MonoBehaviour
 {
     [SerializeField]
     private GameObject aimClue;
-    [SerializeField]
 
+    [SerializeField]
     private GameObject enemyClue;
-    [SerializeField]
 
+    [SerializeField]
     private GameObject actionClue;
 
     public bool isClueShowing;
-
-    public static TutorialClues instance;
-
-    void Start()
-    {
-        instance = this;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space)) CloseActiveClue();
-    }
 
     public void ShowAimClue()
     {
@@ -52,7 +40,7 @@ public class TutorialClues : MonoBehaviour
         GameManager.instance.Pause();
     }
 
-    private void CloseActiveClue()
+    public void CloseActiveClue()
     {
         aimClue.SetActive(false);
         enemyClue.SetActive(false);

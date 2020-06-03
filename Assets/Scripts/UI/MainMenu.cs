@@ -17,9 +17,6 @@ public class MainMenu : MonoBehaviour
     private GameObject controlOptions;
 
     [SerializeField]
-    private GameObject difficultyOptions;
-
-    [SerializeField]
     private GameObject creditPanel;
 
     [SerializeField]
@@ -83,18 +80,6 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Setting SFX Volume");
     }
 
-    public void ShowDifficultyOption()
-    {
-        SoundManager.instance.PlaySFX(0);
-
-        difficultyOptions.SetActive(false);
-    }
-
-    public void SetDifficulty(int difficultyLevel)
-    {
-        Debug.Log("Difficulty is now " + difficultyLevel);
-    }
-
     public void CloseActivePanel()
     {
         SoundManager.instance.PlaySFX(1);
@@ -114,12 +99,6 @@ public class MainMenu : MonoBehaviour
         if (controlOptions.activeInHierarchy)
         {
             controlOptions.SetActive(false);
-            return;
-        }
-
-        if (difficultyOptions.activeInHierarchy)
-        {
-            difficultyOptions.SetActive(false);
             return;
         }
 
