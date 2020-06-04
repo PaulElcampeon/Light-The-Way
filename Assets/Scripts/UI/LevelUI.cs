@@ -56,4 +56,9 @@ public class LevelUI : MonoBehaviour
         GameManager.instance.isMenuOpen = true;
         GameManager.instance.Pause();
     }
+
+    public void LoadNextLevel()
+    {
+        GameManager.instance.LoadNextLevel();
+    }
 }

@@ -330,7 +330,18 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6300912978699202943}
+        m_MethodName: UpdateSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &52331219
@@ -453,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &114735946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -885,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1934,7 +1945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2092,7 +2103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2171,7 +2182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2953,7 +2964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &618492720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3780,7 +3791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &832999354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4069,7 +4080,6 @@ MonoBehaviour:
   levelSelector: {fileID: 701745232}
   soundOptions: {fileID: 608091757}
   controlOptions: {fileID: 1180994290}
-  difficultyOptions: {fileID: 0}
   creditPanel: {fileID: 1468178361}
   showScoresMenu: {fileID: 1879455672}
 --- !u!1 &892901311
@@ -4657,7 +4667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5129,7 +5139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5488,7 +5498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6397,7 +6407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6443,7 +6453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1287914084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6867,7 +6877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1426821004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7057,7 +7067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8245,7 +8255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1744554922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10450,7 +10460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1932011904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10923,7 +10933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2065877165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11310,17 +11320,17 @@ PrefabInstance:
     - target: {fileID: 151906154713292178, guid: cac373fa86c6fb043ae0f5dfcc4a2a9c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0295892
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 151906154713292178, guid: cac373fa86c6fb043ae0f5dfcc4a2a9c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6307865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 151906154713292178, guid: cac373fa86c6fb043ae0f5dfcc4a2a9c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.597046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 151906154713292178, guid: cac373fa86c6fb043ae0f5dfcc4a2a9c,
         type: 3}
@@ -11760,7 +11770,18 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6300912978699202943}
+        m_MethodName: UpdateBGMVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2239171205140177584
@@ -12938,17 +12959,17 @@ PrefabInstance:
     - target: {fileID: 7822617478979160639, guid: 9aa87e38d8055504f8e1f903a7f7df0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0295892
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7822617478979160639, guid: 9aa87e38d8055504f8e1f903a7f7df0d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6307865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7822617478979160639, guid: 9aa87e38d8055504f8e1f903a7f7df0d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.597046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7822617478979160639, guid: 9aa87e38d8055504f8e1f903a7f7df0d,
         type: 3}
@@ -12999,24 +13020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7907627225340228420, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
-        type: 3}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 1326677760267973129, guid: 3a8dada749f71da4894a18a97dcbd000,
-        type: 3}
-    - target: {fileID: 7907627225340228420, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
-        type: 3}
-      propertyPath: gameWinScreen
-      value: 
-      objectReference: {fileID: 5472932237411544005, guid: ef5aef860f5e2354794206b15a269e7c,
-        type: 3}
-    - target: {fileID: 7907627225340228420, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
-        type: 3}
-      propertyPath: menu
-      value: 
-      objectReference: {fileID: 959523017994425718, guid: 09bcb43429a8e8e48adb8b046bf4b81a,
-        type: 3}
     - target: {fileID: 7907627225340228411, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
         type: 3}
       propertyPath: m_Name
@@ -13025,17 +13028,17 @@ PrefabInstance:
     - target: {fileID: 7907627225340228421, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0295892
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907627225340228421, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6307865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907627225340228421, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.597046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907627225340228421, guid: 0ce5287e80382bd4a9d8312fd46ef19d,
         type: 3}

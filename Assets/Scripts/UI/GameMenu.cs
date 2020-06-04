@@ -9,9 +9,6 @@ public class GameMenu : MonoBehaviour
     private GameObject soundMenu;
 
     [SerializeField]
-    private GameObject controlsMenu;
-
-    [SerializeField]
     private GameObject backButton;
 
     private void OnEnable()
@@ -29,22 +26,11 @@ public class GameMenu : MonoBehaviour
         GameManager.instance.Pause();
     }
 
-    public void ShowControlsMenu()
-    {
-        SoundManager.instance.PlaySFX(0);
-
-        controlsMenu.SetActive(true);
-
-        GameManager.instance.Pause();
-    }
-
     public void CloseMenu()
     {
         SoundManager.instance.PlaySFX(1);
 
         if (soundMenu.activeInHierarchy) { soundMenu.SetActive(false); return; }
-        if (controlsMenu.activeInHierarchy) { controlsMenu.SetActive(false); return; }
-
 
         backButton.SetActive(false);
 

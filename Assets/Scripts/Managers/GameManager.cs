@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && CustomSceneManager.instance.CurrentScene() != "Main Menu" && !menu.activeInHierarchy) ShowGameMenu();
+        //if (Input.GetKeyDown(KeyCode.Escape) && CustomSceneManager.instance.CurrentScene() != "Main Menu" && !menu.activeInHierarchy) ShowGameMenu();
 
         if (gameWinScreen.activeInHierarchy || gameOverScreen.activeInHierarchy) return;
 
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         LevelUI.instance.ShowGamWinScreen();
     }
 
-    private void ShowGameMenu()
+    public void ShowGameMenu()
     {
         SoundManager.instance.PlaySFX(0);
 

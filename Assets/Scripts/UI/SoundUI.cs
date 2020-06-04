@@ -23,4 +23,14 @@ public class SoundUI : MonoBehaviour
         SoundManager.instance.bgmVolume = bgmSlider.value;
         SoundManager.instance.sfxVolume = sfxSlider.value;
     }
+
+    public void UpdateBGMVolume()
+    {
+        SoundManager.instance.UpdateBGMVolume(bgmSlider.value);
+    }
+
+    public void UpdateSFXVolume()
+    {
+        SoundManager.instance.UpdateSFXVolume(sfxSlider.value);
+    }
 }

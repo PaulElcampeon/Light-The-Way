@@ -57,7 +57,7 @@ public class SoundManager : MonoBehaviour
 
     public void StopCurrentBGM()
     {
-        for (int i=0; i < bgmSounds.Length; i++)
+        for (int i = 0; i < bgmSounds.Length; i++)
         {
             if (bgmSounds[i].isPlaying) bgmSounds[i].Stop();
         }
@@ -66,5 +66,18 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Getinstance()
     {
         return instance;
+    }
+
+    public void UpdateBGMVolume(float volume)
+    {
+        for (int i = 0; i < bgmSounds.Length; i++)
+        {
+            bgmSounds[i].volume = volume;
+        }
+    }
+
+    public void UpdateSFXVolume(float volume)
+    {
+        sfxVolume = volume;
     }
 }
