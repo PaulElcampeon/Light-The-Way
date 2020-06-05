@@ -9,11 +9,11 @@ public class Shine : MonoBehaviour
     [SerializeField]
     private float maxRadius = 200f;
 
-    private Light2D light2D;
+    private UnityEngine.Experimental.Rendering.Universal.Light2D light2D;
 
     void Start()
     {
-        light2D = GetComponentInChildren<Light2D>();
+        light2D = GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
     }
 
     void Update()
