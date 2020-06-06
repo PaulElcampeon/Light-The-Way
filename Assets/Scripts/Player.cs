@@ -26,16 +26,18 @@ public class Player : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayerMask;
 
+    public Joystick joystick;
+
     private Rigidbody2D playerRGB;
 
     private Animator playerAnimator;
 
-    private float movementDir;
+    public float movementDir;
     private float lastMovementInput;
     public bool isJumping;
     public bool isMoving;
     public bool isDead;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool canJump = true;
     private bool canMove = true;
 
@@ -52,9 +54,17 @@ public class Player : MonoBehaviour
     {
         if (isDead || GameManager.instance.isMenuOpen) return;
 
-        movementDir = Input.GetAxisRaw("Horizontal");
+        //movementDir = joystick.Horizontal;
 
-        ListenForJumpInput();
+        //if (joystick.Horizontal >= 0.2f)
+        //{
+        //    movementDir = 1;
+        //} else if (joystick.Horizontal <= -0.2f)
+        //{
+        //    movementDir = -1;
+        //}
+
+        //ListenForJumpInput();
 
         ListenForThrowLightInput();
 
@@ -150,10 +160,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !isDead) ThrowLight(); ;
     }
 
-    private void ListenForJumpInput()
-    {
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded && !isDead) isJumping = true;
-    }
+    //private void ListenForJumpInput()
+    //{
+    //    if (joystick.Vertical >= 0.5f && isGrounded && !isDead) isJumping = true;
+    //}
 
     private void ActivateJump()
     {
